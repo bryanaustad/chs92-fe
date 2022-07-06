@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shrine (MDC Web Example App)</title>
+  <link rel="shortcut icon" href="https://material.io/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+  <link rel="stylesheet" href="bundle-login.css">
+</head>
+<body class="reunion-page">
+  <div class="form-background">
+  <section class="header">
+    <img class="clearfield-logo" src="assets/clearfield-logo-01.jpg"/> 
+    <h1>Clearfield High 1992</h1>
+    <h2 style="margin-top:-20px">30 year reunion</h2>
+    <div class="whenwhere">
+      <div class="whenwheredetail"><b>When:</b> Sept 17th at 6pm</div>
+      <div class="whenwheredetail"><b>Where:</b> Warehouse 22 </div>
+      <div class="whenwheredetail">1068 W 350 S Suite A, </div>
+      <div class="whenwheredetail">Syracuse, UT 84075</div>
+      <div class="whenwheredetail"><b>Food:</b></div>
+      <div class="whenwheredetail">Chicken or pasta</div>
+      <div class="whenwheredetail"> and a dessert</div>
+    </div>
+    <h3>Sponsored by:</h3>
+    <img class="buckedup" src="assets/buckedup.png"/>
+    
+  </section>
+  <form id="reunionform" action="http://localhost/api/classmate">
+    <label class="mdc-text-field mdc-text-field--filled username">
+      <span class="mdc-text-field__ripple"></span>
+      <input id="name" type="text" class="mdc-text-field__input" aria-labelledby="name-label" name="name" required>
+      <span class="mdc-floating-label" id="name-label">Name</span>
+      <span class="mdc-line-ripple"></span>
+    </label>
+    <label class="mdc-text-field mdc-text-field--filled email">
+      <span class="mdc-text-field__ripple"></span>
+      <input id="email" type="text" class="mdc-text-field__input" aria-labelledby="email-label" name="email" required>
+      <span class="mdc-floating-label" id="email-label">Email</span>
+      <span class="mdc-line-ripple"></span>
+    </label>
+    <label class="mdc-text-field mdc-text-field--filled phone">
+      <span class="mdc-text-field__ripple"></span>
+      <input id="phone" type="text" class="mdc-text-field__input" aria-labelledby="phone-label" name="phone" required>
+      <span class="mdc-floating-label" id="phone-label">Phone</span>
+      <span class="mdc-line-ripple"></span>
+    </label>
+    <label class="mdc-text-field mdc-text-field--filled allergies">
+      <span class="mdc-text-field__ripple"></span>
+      <input id="phone" type="text" class="mdc-text-field__input" aria-labelledby="phone-label" name="allergies">
+      <span class="mdc-floating-label" id="allergies-label">List allergies (gluten, peanuts, etc..)</span>
+      <span class="mdc-line-ripple"></span>
+    </label>
+  
+
+<div class="switch-label-container">
+  <label for="guest-switch">I'm bringing a guest.</label>
+  <div class="mdc-switch switch-container guest">
+    <div class="mdc-switch__track"></div>
+    <div class="mdc-switch__thumb-underlay">
+      <div class="mdc-switch__thumb">
+          <input id="bringguest" type="checkbox" id="guest-switch" class="mdc-switch__native-control s" role="switch" onchange="toggleGuest()">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="line1" >
+  <label for="chs-guest-switch">My guest was a 92 graduate</label>
+  <div class="mdc-switch chs-guest-container chs-guest">
+    <div class="mdc-switch__track"></div>
+    <div class="mdc-switch__thumb-underlay">
+      <div class="mdc-switch__thumb">
+          <input type="checkbox" id="chs-guest-switch" class="mdc-switch__native-control" role="switch" onchange="toggleGuestName()">
+      </div>
+    </div>
+  </div>
+</div>
+
+<label class="mdc-text-field mdc-text-field--filled guestName">
+  <span class="mdc-text-field__ripple"></span>
+  <input id="guestName" type="text" class="mdc-text-field__input" aria-labelledby="guestName-label" name="guestName" >
+  <span class="mdc-floating-label" id="guestName-label">Guest Name</span>
+  <span class="mdc-line-ripple"></span>
+</label>
+
+
+
+
+
+<div class="payinstruct">
+
+  <div class="costelement">
+    <h4>In Venmo, type in "CHS92 Reunion" and your name in the "What's it for?" field. We then can validate your payment.</h4>
+  </div>
+  <div>
+    <input type="radio" id="noguest" class="costelement" name="cost" value="$18" checked>
+    <label for="noguest">$18 me only</label>
+    <input type="radio" id="withguest" class="costelement" name="cost" value="$36">
+    <label for="withguest">$36 with guest</label><br>
+  </div>  
+  <div >
+    <img class="qr" src="assets/venmo-qr-01.jpg"/>
+  </div>
+  <div><a href="http://www.venmo.com/u/bryanaustad">www.venmo.com/u/bryanaustad</a></div>
+</div>
+
+<!--
+<div class="next-line">
+  <label for="notify-switch">Notify me of updates</label>
+  <div class="mdc-switch next-line-container notify">
+    <div class="mdc-switch__track"></div>
+    <div class="mdc-switch__thumb-underlay">
+      <div class="mdc-switch__thumb">
+          <input type="checkbox" id="notify-switch" class="mdc-switch__native-control mdc-switch__icons" role="switch">
+      </div>
+    </div>
+  </div>
+</div>
+-->
+    <div class="username">* We will use your contact information only to send you information about reunion events.</div>
+
+    <div class="button-container">
+      <button class="mdc-button mdc-button--raised next" >
+        <div class="mdc-button__ripple"></div>
+        <span class="mdc-button__label">
+          Submit
+        </span>
+      </button>
+    </div>
+  </form>
+
+  
+
+    
+
+<script src="bundle-login.js" async></script>
+<script>
+const reunionform = document.getElementById("reunionform");
+reunionform.addEventListener("submit", handleFormSubmit);
+
+async function handleFormSubmit(event){
+  event.preventDefault();
+  const form = event.currentTarget;
+  const url = form.action;
+  try{
+    const formData = new FormData(form);
+    const responseData = await postFormDataAsJson({url,formData});
+    console.log({responseData});
+    try{
+        window.location.replace("home.html");
+    }catch(e){
+        console.log(e);
+    }
+  }catch(error){
+    console.error(error);
+  }
+}
+
+async function postFormDataAsJson({url, formData}){
+  const plainFormData = Object.fromEntries(formData.entries());
+  const formDataJsonString = JSON.stringify(plainFormData);
+  console.log(formDataJsonString);
+  const fetchOptions = {
+    method: "POST",
+    headers:{
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: formDataJsonString,
+  };
+  const response = await fetch(url, fetchOptions);
+  console.log(response);
+  if(!response.ok){
+    const errorMessage = await response.text();
+    throw new Error(errorMessage);
+  }
+
+  return response.json();
+}
+
+
+function toggleGuest(){
+    const guestcb = document.querySelector("#bringguest");
+    const chsguestcb = document.querySelector("#chs-guest-switch");
+    const line1 = document.getElementsByClassName('line1');
+    const line2 = document.getElementsByClassName('guestName');
+    const noguest = document.querySelector("#noguest");
+    const withguest = document.querySelector("#withguest");
+    var aNode = line1[0];
+    var guestNameNode = line2[0];
+    if(guestcb.checked){
+      withguest.checked = true;
+      aNode.style.display = 'flex';
+      if(chsguestcb.checked){
+        guestNameNode.style.display = 'flex';
+      }
+    }else{
+      noguest.checked = true;
+      aNode.style.display = 'none';
+      guestNameNode.style.display = 'none';
+    }
+    
+}
+
+function toggleGuestName(){
+    const guestcb = document.querySelector("#chs-guest-switch");
+    const line1 = document.getElementsByClassName('guestName');
+    var aNode = line1[0];
+    if(guestcb.checked){
+      aNode.style.display = 'flex';
+    }else{
+      aNode.style.display = 'none';
+    }
+}
+
+/*
+function getData()
+{
+    //gettting the values
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value; 
+    var phone = document.getElementById("phone").value; 
+    var bringguest = document.getElementById("bringguest"); 
+    if(bringguest.checked)
+       bringguest = true;
+    else
+       bringguest = false;    
+    window.sessionStorage.setItem("name", name);
+    window.sessionStorage.setItem("email", email);
+    window.sessionStorage.setItem("phone", phone);
+    window.sessionStorage.setItem("bringguest", bringguest);
+
+    const update =
+    {   
+      name: name,
+      email: email,
+      phone: phone,
+      notify: true,
+      guest: bringguest,
+      paid: true,
+      alcohol: false,
+      confirmationNumber: '1234700000'
+     };
+
+    const options = 
+    {
+      method: 'POST',
+      headers: 
+      {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(update),
+    };
+   
+    console.log(JSON.stringify(update));
+    console.log(options);
+    if(name != "" && email != "" && phone != ""){
+      fetch('http://localhost/api/classmate',options)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            try{
+              window.location.replace("home.html");
+            }catch(e){
+              console.log(e);
+            }
+      }).catch(function() {
+        console.log("error");
+      });
+    }  
+
+    
+
+    
+}
+*/
+
+</script>
+</div>
+</body>
+</html>

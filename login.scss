@@ -1,0 +1,130 @@
+@import "./common";
+@import "@material/textfield/mdc-text-field";
+@import "@material/button/mdc-button";
+@import "@material/switch/mdc-switch";
+
+.reunion-page{
+  background-color: #d2e5d2;
+}
+
+.form-background{
+  background-color: #ffffff;
+  border-radius: 15px;
+  width: 375px;
+  text-align: center;
+  margin: 10px auto;
+  
+}
+.header {
+  text-align: center;
+}
+
+.costelement{
+  margin: 10px;
+}
+
+.clearfield-logo 
+{
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  
+  
+}
+
+
+
+.buckedup
+{
+  width: 300px;
+  margin-top: -20px;
+  
+}
+
+.qr 
+{
+  width: 300px;
+  height: 300px;
+  width: 300px;
+  margin: 10px auto;
+  
+  
+  
+}
+
+.payinstruct
+{
+  width: 300px;
+  height: 320px;
+  display:table;
+  margin: 20px auto;
+  background-color: #f5f5f5;
+}
+
+.username,
+.email,
+.phone,
+.allergies,
+.switch-label-container,
+.next-line
+{
+  display: flex;
+  width: 300px;
+  margin: 20px auto;
+}
+
+.line1,
+.guestName
+{
+  display: none;
+  width: 300px;
+  margin: 20px auto;
+}
+
+.switch-container
+{
+  display: flex;
+  margin-left: 120px;
+}
+
+.next-line-container
+{
+  display: flex;
+  margin-left: 114px;
+}
+
+.chs-guest-container
+{
+  display: flex;
+  margin-left: 63px;
+}
+
+.button-container
+{
+  display: flex;
+  justify-content: flex-end;
+  width: 300px;
+  margin: auto;
+}
+
+.button-container button {
+  margin: 10px;
+}
+.index-button-container
+{
+  display: flex;
+  justify-content: flex-start;
+  width: 300px;
+  margin: 5px;
+  margin-left: -5px;
+}
+
+.whenwhere{
+  display: block;
+  text-align: left;
+  margin-left: 110px;
+}
+
+.whenwheredetail{
+  margin: 0px;
+}
